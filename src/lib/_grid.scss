@@ -1,0 +1,23 @@
+// contains classes for grid
+
+$columns: 4;
+$gutter-width: 30px;
+
+// Column
+[class*="grid-"] {
+  display: grid;
+  grid-gap: $gutter-width / 2;
+}
+
+// Create Column
+@for $i from $columns through 1 {
+	.grid-col-#{ $i } {
+	  grid-template-columns: repeat($i, 1fr);
+	}
+}
+
+/* Center child*/
+.center-child {
+    display: grid;
+    place-items: center;
+}

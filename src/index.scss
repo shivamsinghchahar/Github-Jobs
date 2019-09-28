@@ -1,0 +1,22 @@
+// CSS Reset
+@import "./lib/reset";
+// Assign base values after reset
+@import "./lib/base";
+// Flex
+@import "./lib/flex";
+// Grid
+@import "./lib/grid";
+// Variables
+@import "./common/vars";
+// General classes
+@import "./common/general";
+//Header
+@import "./common/header";
+// Loader
+@import "./components/Loader/loader";
+// Add other files here
+@import "./components/Search/search";
+// Job
+@import "./components/Job/job";
+// Footer
+@import "./common/footer";

@@ -1,0 +1,28 @@
+// Colors
+$lightBlue: #DEEDF5;
+// $blueAlt: #7098C7;
+$blue: #045BEB;
+$blueAlt: #2B7FC3;
+$darkBlue: #0A2C71;
+
+$black: #05070E;
+
+$lightGrey: #B4BEC6;
+$grey: #4A4C5A;
+
+$white: #fafafa;
+// Fonts
+$raleway: 'Raleway', sans-serif;
+$lusitana: 'Lusitana', serif;
+// box shadow that I like to use
+$shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+$shadowAlt: 0 3px 5px rgba(57, 63, 72, 0.3);
+
+// Mixin I like, below comment shows how to use it
+// @include border-radius(0.5rem);
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
