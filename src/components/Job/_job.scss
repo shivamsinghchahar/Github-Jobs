@@ -1,0 +1,95 @@
+.jobs-container {
+    padding: 1rem 1.25rem;
+    flex-direction: column-reverse;
+    .wrapper {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+.job {
+    width: 100%;
+    @include border-radius(0.25rem);
+    padding: 0.5rem;
+    border: 2px solid rgba($lightGrey, 0.5);
+    margin-bottom: 1rem;
+    box-shadow: 4px 4px 10px -5px rgba(0, 0, 0, 0.5);
+    background: white;
+    &:hover {
+        border: 2px solid rgba($blue, 0.5);
+    }
+}
+
+.job-title {
+    a {
+        font-size: 1rem;
+        color: rgba($black, 0.8);
+        letter-spacing: 1px;
+
+        &:hover {
+            color: $black;
+            text-decoration: underline;
+        }
+    }
+}
+
+.company, .job-type {
+    margin-right: 0.75rem;
+}
+
+.company {
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+.job-type, .job-location {
+    color: $grey;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+.job-type {
+    color: $darkBlue;
+}
+
+.paginate {
+    @include border-radius(2rem);
+    border: 1px solid rgba($lightGrey, 0.5);
+    overflow: hidden;
+    flex-direction: row !important;
+    margin-bottom: 1.75rem;
+    width: max-content !important;
+}
+
+.page-btn {
+    padding: 0.5rem 1rem;
+    background: rgba(tomato, 0.9);
+    color: white;
+    font-weight: 700;
+    border-right: 1px solid rgba($lightGrey, 0.5);
+    &:hover {
+        background: rgba(tomato, 0.6);
+    }
+}
+
+.active-page {
+    box-shadow: inset $shadow;
+}
+
+@media all and (min-width: 768px) {
+    .jobs-container {
+        padding: 2rem;
+        .wrapper {
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+    }
+
+    .job {
+        width: 49%;
+    }
+
+    .page-btn {
+        padding: 0.75rem 1.5rem;
+    }
+}
