@@ -10,31 +10,56 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        jobs: null,
-        loading: true
+      jobs: null,
+      loading: true,
+      page: 1
     }
   }
 
-  componentDidMount() {
-      fetch(`${allowCors}/https://jobs.github.com/positions.json`)
+  fetchJobs = () => {
+    fetch(`${allowCors}/https://jobs.github.com/positions.json?page=${this.state.page}`)
       .then(res => res.json())
-      .then(jobs => this.setState({ jobs, loading: false }));
+      .then(jobs => this.setState({ jobs, loading: false }))
+      .catch(err => console.log(err));
+  }
+
+  componentDidMount() {
+    this.fetchJobs();
   }
 
   handleJobs = (jobs, loading) => {
     this.setState({ jobs, loading });
   }
 
+  nextFifty = async () => {
+    // Handle github API pagination
+    let page = this.state.page + 1;
+    await this.setState({ page, loading: true });
+    this.fetchJobs();
+  }
+
+  prevFifty = async () => {
+    let page = this.state.page - 1;
+    if (page < 0) {
+      return;
+    } else {
+      await this.setState({ page, loading: true });
+      this.fetchJobs();
+    }
+  }
+
   render() {
     return (
       <React.Fragment>
         <Header />
-        <Search 
+        <Search
           handleJobs={this.handleJobs}
         />
         {
-          this.state.loading ? (<Loader />) : (<Job 
+          this.state.loading ? (<Loader />) : (<Job
             jobs={this.state.jobs}
+            nextFifty={this.nextFifty}
+            prevFifty={this.prevFifty}
           />)
         }
       </React.Fragment>
