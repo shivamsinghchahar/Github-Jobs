@@ -1,8 +1,11 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 import Header from './components/Header';
 import Search from './components/Search/Search';
 import Loader from './components/Loader/Loader';
 import Job from './components/Job/Job';
+import JobDescription from './components/Job/JobDescription';
 
 const allowCors = 'https://cors-anywhere.herokuapp.com';
 
@@ -48,21 +51,44 @@ class App extends React.Component {
     }
   }
 
+  handleBookmarks = (id) => {
+    let bookmarks = [];
+    if(!localStorage.bookmarks) {
+      localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+    } else {
+      bookmarks = JSON.parse(localStorage.bookmarks);
+    }
+    
+    if (bookmarks.includes(id)) {
+      bookmarks = bookmarks.filter(job => job != id);
+      localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+    } else {
+      bookmarks.push(id);
+      localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+    }
+  }
+
   render() {
     return (
-      <React.Fragment>
+      <Router>
         <Header />
-        <Search
-          handleJobs={this.handleJobs}
-        />
-        {
-          this.state.loading ? (<Loader />) : (<Job
-            jobs={this.state.jobs}
-            nextFifty={this.nextFifty}
-            prevFifty={this.prevFifty}
-          />)
-        }
-      </React.Fragment>
+        <Switch>
+          <Route path="/positions/:id" component={JobDescription}/>
+          <Route path="/">
+            <Search
+              handleJobs={this.handleJobs}
+            />
+            {
+              this.state.loading ? (<Loader />) : (<Job
+                jobs={this.state.jobs}
+                nextFifty={this.nextFifty}
+                prevFifty={this.prevFifty}
+                handleBookmarks={this.handleBookmarks}
+              />)
+            }
+          </Route>
+        </Switch>
+      </Router>
     );
   }
 }
