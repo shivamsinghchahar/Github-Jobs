@@ -15,12 +15,15 @@
     width: 100%;
     border: 2px solid $lightBlue;
     box-shadow: 4px 4px 10px -5px rgba(0,0,0,0.5);
-    background: transparent;
+    background: rgba(white, 0.7);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
     &:focus {
         border: 2px solid $lightGrey;
         background: white;
+    }
+    &::placeholder {
+        color:rgba(black, 0.4);
     }
 }
 
