@@ -12,7 +12,6 @@ class Job extends React.Component {
 
   componentDidMount() {
     const pages = Math.ceil(this.props.jobs.length / 10);
-
     this.setState({ pages });
   }
 
@@ -38,13 +37,14 @@ class Job extends React.Component {
                 <JobCard
                   job={job}
                   key={job.id}
+                  handleBookmarks={this.props.handleBookmarks}
                 />
               )
             })
           }
         </div>
         <div className="paginate flex-start wrapper">
-          <button className="prev-jobs" onClick={this.props.prevFifty}>Prev 50</button>
+          <button className="prev-jobs" onClick={this.props.prevFifty}>⬅ 50</button>
           {
             new Array(this.state.pages).fill(0).map((page, i) => {
               return (<button
@@ -56,7 +56,7 @@ class Job extends React.Component {
               </button>)
             })
           }
-          <button className="next-jobs" onClick={this.props.nextFifty}>Next 50</button>
+          <button className="next-jobs" onClick={this.props.nextFifty}>50 ➡</button>
         </div>
       </section>
     );
