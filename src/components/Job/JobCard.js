@@ -8,13 +8,16 @@ class JobCard extends React.Component {
     }
   }
 
-  updateBookmarks() {
-
+  componentDidMount() {
+    if(localStorage.bookmarks && localStorage.bookmarks.includes(this.props.job.id)) {
+      this.setState({ bookmarked: true });
+    }
   }
 
-  handleClick = () => {
+  handleClick = (id) => {
     const bookmarked = !this.state.bookmarked;
     this.setState({ bookmarked });
+    this.props.handleBookmarks(this.props.job.id);
   }
 
   render() {
@@ -23,7 +26,7 @@ class JobCard extends React.Component {
         <div className="job">
           <header className="job-header">
             <h4 className="job-title">
-              <a href={this.props.job.url}>{this.props.job.title}</a>
+              <a href={`positions/${this.props.job.id}`}>{this.props.job.title}</a>
             </h4>
             <div className="flex-between bookmark">
               <span className="company">
