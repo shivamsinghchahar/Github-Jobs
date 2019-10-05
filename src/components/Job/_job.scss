@@ -71,6 +71,7 @@
 .paginate {
     @include border-radius(2rem);
     border: 1px solid rgba($blue, 0.5);
+    box-shadow: $shadowAlt;
     overflow: hidden;
     flex-direction: row !important;
     margin-bottom: 1.75rem;
@@ -93,7 +94,7 @@
 }
 
 .prev-jobs, .next-jobs {
-    background: transparent;
+    background: white;
     color: $blue;
     font-weight: 700;
     padding: 0.5rem 1rem;
@@ -102,6 +103,77 @@
     }
 }
 
+// Single job styles
+.job-page {
+    padding: 1rem 1.25rem;
+}
+
+.hero {
+    flex-direction: column;
+}
+.job-page-header {
+    @include border-radius(0.25rem);
+    width: 100%;
+    padding: 1rem 0.75rem;
+    background: white;
+    border: 1px solid rgba($lightGrey, 0.5);
+    align-items: flex-start;
+    box-shadow: $shadowAlt;
+    color: rgba($black, 0.8);
+}
+.company-card {
+    width: 40%;
+    text-align: center;
+    h5 {
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+    }
+}
+.job-info {
+    flex-direction: column;
+    align-items: initial;
+    padding: 0.5rem;
+    h4 {
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+    }
+}
+
+.job-apply {
+    @include border-radius(0.25rem);
+    padding: 0.5rem;
+    width: 100%;
+    margin-top: 2rem;
+    border: 1px solid rgba($lightGrey, 0.5);
+    background: white;
+    box-shadow: $shadowAlt;
+    color: rgba($black, 0.8);
+    overflow: hidden;
+    a {
+        color: $blue;
+        text-decoration: underline;
+    }
+}
+
+.apply-title {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.job-description-container {
+    @include border-radius(0.25rem);
+    margin-top: 2rem;
+    border: 1px solid rgba($lightGrey, 0.5);
+    background: white;
+    padding: 0.75rem;
+    box-shadow: $shadowAlt;
+    color: rgba($black, 0.8);
+    h4 {
+        margin-bottom: 1rem;
+    }
+}
 @media all and (min-width: 768px) {
     .jobs-container {
         padding: 2rem;
@@ -117,5 +189,33 @@
 
     .page-btn {
         padding: 0.5rem 1.5rem;
+    }
+
+    .hero {
+        flex-direction: initial;
+    }
+
+    .job-page-header {
+        padding: 1rem;
+        width: 58% !important;
+    }
+    
+    .job-apply {
+        align-self: baseline;
+        margin-top: 0;
+        width: 40%;
+        padding: 1rem;
+    }
+
+    .company-card {
+        width: 30%;
+    }
+
+    .job-info {
+        width: 65%;
+    }
+
+    .job-description-container {
+        padding: 1rem;
     }
 }
