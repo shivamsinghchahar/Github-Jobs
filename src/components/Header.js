@@ -5,7 +5,7 @@ function Header(props) {
         <header className="header">
             <div className="wrapper">
                 <nav className="navbar flex-between">
-                    <a className="logo" href='#'><span>GitHub</span>Jobs</a>
+                    <a className="logo" href='/'><span>GitHub</span>Jobs</a>
                     <label htmlFor="toggle">
                         <div className="menu">MENU</div>
                     </label>
