@@ -13,7 +13,7 @@ function JobList({ hasErrors, loading, jobs, dark }) {
         {
           loading
             ? (
-              <SkeletonTheme color={dark ? '#2c5282' : 'white'} highlightColor={dark ? '#2a4365' : '#edf2f7'}>
+              <SkeletonTheme color={dark ? '#2c5282' : 'white'} highlightColor={dark ? '#2b6cb0' : '#edf2f7'}>
                 <Skeleton count={10} height={90} />
               </SkeletonTheme>)
             : jobs.map(job => <JobCard job={job} />)
