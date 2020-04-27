@@ -1,26 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import Header from './components/Header';
+import Search from './components/Jobs/Search';
+import JobList from './components/Jobs/JobList';
+import { connect } from 'react-redux';
+
+function App({ dark }) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`${dark ? 'bg-blue-900' : 'bg-gray-200'} min-h-screen`}>
+      <Header />
+      <Search />
+      <JobList />
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = state => ({
+  dark: state.theme.dark
+});
+
+export default connect(mapStateToProps)(App);
