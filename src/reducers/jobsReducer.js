@@ -5,7 +5,7 @@ export const initialState = {
   jobs: [],
   loading: false,
   hasErrors: false,
-  currentJobs: null,
+  currentJobs: [],
   globalPage: 1,
 };
 
@@ -20,7 +20,7 @@ export default function jobsReducer(state = initialState, action) {
     case actions.GET_JOBS_FAILURE:
       return { ...state, loading: false, hasErrors: true }
     case actions.GET_CURRENT_JOBS:
-      return { ...state, currentJobs: state.jobs.length >= state.globalPage ? state.jobs[state.globalPage - 1].slice(action.payload.start, action.payload.end) : null }
+      return { ...state, currentJobs: state.jobs.length >= state.globalPage ? state.jobs[state.globalPage - 1].slice(action.payload.start, action.payload.end) : [] }
     case actions.SET_GLOBAL_PAGE:
       return { ...state, globalPage: action.payload }
     case actions.CLEAR_JOBS:

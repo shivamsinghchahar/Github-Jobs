@@ -1,9 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import Header from './components/Header';
 import Search from './components/Jobs/Search';
 import JobList from './components/Jobs/JobList';
-import { connect } from 'react-redux';
+import Footer from './components/Footer';
 
 function App({ dark }) {
   return (
@@ -11,6 +12,7 @@ function App({ dark }) {
       <Header />
       <Search />
       <JobList />
+      <Footer />
     </div>
   );
 }

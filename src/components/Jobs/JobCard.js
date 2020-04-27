@@ -26,7 +26,7 @@ function JobCard({ job, dark }) {
 }
 
 const mapStateToProps = state => ({
-  dark: state.theme.dark
+  dark: state.theme.dark,
 });
 
 export default connect(mapStateToProps)(JobCard);
