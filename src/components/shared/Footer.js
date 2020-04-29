@@ -7,7 +7,7 @@ function Footer({ dark }) {
     <footer className={`${dark ? 'text-gray-300 bg-blue-800' : 'text-gray-800 bg-gray-100'} w-full flex justify-center items-center border-1 bottom-0 p-4`}>
       <section className="w-full lg:w-1/2">
         <nav>
-          <ul className="w-full flex justify-between pt-4 pb-6 text-sm">
+          <ul className="w-full flex flex-wrap justify-between pt-4 pb-6 text-sm">
             <li>
               <a
                 className="hover:text-blue-400"
