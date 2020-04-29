@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import DarkModeToggler from './DarkMode/DarkModeToggler';
+import DarkModeToggler from '../DarkMode/DarkModeToggler';
 
 function Header({ dark }) {
   return (

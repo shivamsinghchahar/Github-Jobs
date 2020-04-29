@@ -11,7 +11,7 @@ function NotFound({ dark }) {
         Please try again.
       </p>
       <div className="w-full flex justify-center mb-4">
-        <img className="sm:w-screen lg:w-1/3" src={notFound} alt="not found" />
+        <img className="w-screen lg:w-1/3" src={notFound} alt="not found" />
       </div>
     </section>
   );
