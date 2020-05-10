@@ -57,11 +57,11 @@ function Paginate({ page, dispatch, jobs, globalPage, currentJobs, searching, de
         </button>
       </div>
       <div className="w-full lg:w-4/6 lg:my-4 py-2 flex justify-between items-center">
-        <div className="bg-gray-500 w-1/5 h-px lg:w-2/6"></div>
+        <div className="bg-gray-500 w-2/12 h-px lg:w-2/6"></div>
         <div className="">
-          <span className={`${dark ? 'text-gray-200' : 'text-gray-600'} text-xs`}>Showing {(page - 1) * 10} - {page * 10} of 188 Jobs</span>
+          <span className={`${dark ? 'text-gray-200' : 'text-gray-600'} text-xs`}>Showing {(page - 1) * 10 == 0 ? 1 : (page - 1) * 10} - {(page - 1) * 10 + currentJobs.length} of all Jobs</span>
         </div>
-        <div className="bg-gray-500 w-1/5 w-1 h-px lg:w-2/6"></div>
+        <div className="bg-gray-500 w-2/12 w-1 h-px lg:w-2/6"></div>
       </div>
     </React.Fragment>
   );

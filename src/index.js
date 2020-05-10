@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 // Local imports
 import App from './App';
 import { store } from './store';
+import * as serviceWorker from './serviceWorker';
 // Assets
 import './assets/main.css';
 
@@ -14,3 +15,5 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
+
+serviceWorker.register();
