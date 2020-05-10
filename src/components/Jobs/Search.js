@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 
 import Input from '../shared/Input';
 import Checkbox from '../shared/Checkbox';
-import { setQuery, clearQuery } from '../../actions/queryActions';
-import { fetchJobs, clearJobs } from '../../actions/jobsActions';
+import { setQuery, clearQuery, setPage } from '../../actions/queryActions';
+import { fetchJobs, clearJobs, setGlobalPage } from '../../actions/jobsActions';
 
 class Search extends React.Component {
   handleChange = (name, value) => {
@@ -17,12 +17,15 @@ class Search extends React.Component {
     e.preventDefault();
     dispatch(clearJobs());
     dispatch(fetchJobs(description, location, full_time));
+    dispatch(setPage(1));
+    dispatch(setGlobalPage(1));
   }
 
   handleClear = e => {
     const { dispatch } = this.props;
     dispatch(clearJobs());
     dispatch(clearQuery());
+    dispatch(fetchJobs());
   }
 
   isQueryPresent = () => {
