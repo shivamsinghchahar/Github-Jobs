@@ -9,14 +9,14 @@ function JobList({ hasErrors, loading, jobs, dark }) {
   return (
     <main className="flex p-4 pt-0 justify-center flex-wrap">
       <Paginate />
-      <section className="w-full lg:w-4/6">
+      <section className="w-full lg:w-4/6 min-h-screen">
         {
           loading
             ? (
               <SkeletonTheme color={dark ? '#2c5282' : 'white'} highlightColor={dark ? '#2b6cb0' : '#edf2f7'}>
                 <Skeleton count={10} height={90} />
               </SkeletonTheme>)
-            : jobs.map(job => <JobCard job={job} />)
+            : jobs.map(job => <JobCard job={job} key={job.id} />)
         }
       </section>
     </main>
