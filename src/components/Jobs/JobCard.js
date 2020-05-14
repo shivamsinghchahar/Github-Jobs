@@ -4,7 +4,6 @@ import moment from 'moment';
 import CustomSkeleton from '../shared/CustomSkeleton';
 
 function JobCard({ job, dark }) {
-  console.log(job)
   let date = job && + new Date(job.created_at);
   return (
     <div className={`${dark ? 'bg-blue-800' : 'bg-white'} shadow flex flex-wrap py-4 px-3 rounded shadow-sm mb-2 lg:mb-4`}>

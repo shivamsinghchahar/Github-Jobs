@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import GitHubButton from 'react-github-btn';
 
+import heart from '../../assets/icons/heart.svg';
+
 function Footer({ dark }) {
   return (
     <footer className={`${dark ? 'text-gray-300 bg-blue-800' : 'text-gray-800 bg-gray-100'} w-full flex justify-center items-center border-1 bottom-0 p-4`}>
@@ -40,7 +42,7 @@ function Footer({ dark }) {
           </ul>
         </nav>
         <p className="font-mono text-xs text-center">
-          Made with <i className="fas fa-heart text-red-500"></i> by <a target="_blank" href="https://twitter.com/shahr_96" className={`${dark ? 'text-blue-400' : 'text-blue-600'} italic`}>Shivam Chahar</a>
+          Made with <img className="inline" src={heart} alt="heart" width={14} height={14}/> by <a target="_blank" href="https://twitter.com/shahr_96" className={`${dark ? 'text-blue-400' : 'text-blue-600'} italic`}>Shivam Chahar</a>
         </p>
       </section>
     </footer>
