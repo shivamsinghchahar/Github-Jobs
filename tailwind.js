@@ -224,11 +224,12 @@ module.exports = {
     },
     fontFamily: {
       sans: [
-        'Roboto',
+        '"Montserrat"',
         'system-ui',
         '-apple-system',
         'BlinkMacSystemFont',
         '"Segoe UI"',
+        'Roboto',
         '"Helvetica Neue"',
         'Arial',
         '"Noto Sans"',
