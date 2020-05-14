@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { theme } from '../../actions/themeActions';
 
-import './index.css';
+import sun from '../../assets/icons/sun.svg';
+import moon from '../../assets/icons/moon.svg';
 
 function DarkModeToggler({ dispatch, dark }) {
   return (
@@ -17,11 +18,11 @@ function DarkModeToggler({ dispatch, dark }) {
         onClick={e => dispatch(theme(e.target.checked))}
       />
       {
-        !dark && <i className="fas fa-sun text-orange-500 ml-1 text-xs"></i> 
+        !dark && <img className="ml-1 block" src={sun} alt="sun" width={14} height={14}/>
       }
       <span className="w-5 h-5 bg-white rounded-full slider shadow-sm"></span>
       {
-        dark && <i className="fas fa-moon mr-1 text-yellow-500 text-xs"></i>
+        dark && <img className="mr-1 block" src={moon} alt="moon" width={14} height={14}/>
       }
     </label>
   );

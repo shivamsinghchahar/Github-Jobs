@@ -224,6 +224,7 @@ module.exports = {
     },
     fontFamily: {
       sans: [
+        '"Montserrat"',
         'system-ui',
         '-apple-system',
         'BlinkMacSystemFont',
