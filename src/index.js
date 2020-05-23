@@ -8,6 +8,7 @@ import { store } from './store';
 import * as serviceWorker from './serviceWorker';
 // Assets
 import './assets/main.css';
+require('typeface-montserrat')
 
 ReactDOM.render(
   <Provider store={store}>

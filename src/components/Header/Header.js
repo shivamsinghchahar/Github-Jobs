@@ -8,7 +8,7 @@ function Header({ dark }) {
     <header className={`${dark ? 'bg-blue-800' : 'bg-white'} shadow flex justify-center items-center`}>
       <nav className="w-full lg:w-4/6 flex items-center justify-between flex-wrap p-4">
         <div className="flex items-center flex-shrink-0 text-gray-800 mr-6">
-          <span className={`${dark ? 'text-white hover:text-gray-200' : 'hover:text-gray-700'} font-semibold text-xl tracking-tight cursor-pointer`}>GitHub Jobs</span>
+          <span className={`${dark ? 'text-white hover:text-gray-200' : 'hover:text-gray-700'} font-bold text-xl tracking-tight cursor-pointer`}>GitHub Jobs</span>
         </div>
         <div className="block all:flex all:items-center all:justify-end w-auto">
           <DarkModeToggler />
