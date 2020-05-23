@@ -16,7 +16,10 @@
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "typeface-montserrat": "0.0.75"
+    "typeface-montserrat": "0.0.75",
+    "autoprefixer": "^9.7.6",
+    "postcss-cli": "^7.1.0",
+    "tailwindcss": "^1.2.0"
   },
   "scripts": {
     "start": "npm run watch:css && react-scripts start",
@@ -42,9 +45,6 @@
     ]
   },
   "devDependencies": {
-    "autoprefixer": "^9.7.6",
-    "postcss-cli": "^7.1.0",
-    "redux-devtools-extension": "^2.13.8",
-    "tailwindcss": "^1.2.0"
+    "redux-devtools-extension": "^2.13.8"
   }
 }
