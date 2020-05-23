@@ -1,11 +1,4 @@
 module.exports = {
-  purge: [
-    './src/components/**/*.js',
-    './src/pages/**/*.js',
-    './src/layouts/**/*.js',
-    './src/App.js',
-    './public/index.html',
-  ],
   prefix: '',
   important: false,
   separator: ':',
