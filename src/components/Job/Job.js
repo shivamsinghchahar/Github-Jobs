@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import moment from 'moment';
 import CustomSkeleton from '../shared/CustomSkeleton';
 
-function JobCard({ job, dark }) {
+function Job({ job, dark }) {
   let date = job && + new Date(job.created_at);
   return (
     <div className={`${dark ? 'bg-blue-800' : 'bg-white'} shadow flex flex-wrap py-4 px-3 rounded shadow-sm mb-2 lg:mb-4`}>
@@ -53,4 +53,4 @@ const mapStateToProps = state => ({
   dark: state.theme.dark,
 });
 
-export default connect(mapStateToProps)(JobCard);
+export default connect(mapStateToProps)(Job);

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Home from './pages/Home';
+import Home from './pages/Home/Home';
 
 function App({ dark, hasErrors }) {
   return (

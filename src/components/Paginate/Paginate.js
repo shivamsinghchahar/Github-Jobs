@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { setPage } from '../../actions/queryActions';
 import { getCurrentJobs, setGlobalPage, fetchJobs } from '../../actions/jobsActions';
-import CustomSkeleton from './CustomSkeleton';
+import CustomSkeleton from '../shared/CustomSkeleton';
 
 function Paginate({ page, dispatch, jobs, globalPage, currentJobs, searching, description, location, full_time, dark }) {
   useEffect(() => {
@@ -41,7 +41,7 @@ function Paginate({ page, dispatch, jobs, globalPage, currentJobs, searching, de
           {
             new Array(Math.ceil(jobs[globalPage - 1] && jobs[globalPage - 1].length / 10) || 5).fill(0).map((_, idx) => (
               <button
-                className={`${page - ((globalPage - 1) * 5) - 1 === idx ? 'bg-blue-500 text-white rounded-full h-10 w-10' : dark ? 'text-gray-400 hover:text-blue-300 py-2 px-4' : 'text-gray-700 hover:text-blue-500 py-2 px-4'} text-sm font-semibold outline-none bg-transparent hover:text-white hover:border-transparent`}
+                className={`${page - ((globalPage - 1) * 5) - 1 === idx ? 'bg-blue-500 text-white rounded-full h-10 w-10' : dark ? 'text-gray-400 hover:text-blue-300 py-2 px-4' : 'text-gray-700 hover:text-blue-500 py-2 px-4'} text-sm font-bold outline-none bg-transparent hover:text-white hover:border-transparent`}
                 onClick={() => dispatch(setPage((globalPage - 1) * 5 + idx + 1))}
               >
                 {(globalPage - 1) * 5 + idx + 1}
@@ -65,7 +65,7 @@ function Paginate({ page, dispatch, jobs, globalPage, currentJobs, searching, de
               ? (
                 <span
                   className={`${dark ? 'text-gray-200' : 'text-gray-600'} text-xs`}
-                >Showing {(page - 1) * 10 == 0 ? 1 : (page - 1) * 10} - {(page - 1) * 10 + currentJobs.length} of all Jobs
+                >Showing {(page - 1) * 10 == 0 ? 1 : (page - 1) * 10} - {(page - 1) * 10 + currentJobs.length} of All Jobs
                 </span>)
               : <CustomSkeleton width={190}/>
           }

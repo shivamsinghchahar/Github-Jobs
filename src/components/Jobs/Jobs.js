@@ -1,18 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Paginate from '../shared/Paginate';
-import JobCard from './JobCard';
+import Paginate from '../Paginate/Paginate';
+import Job from '../Job/Job';
 
-function JobList({ loading, jobs }) {
+function Jobs({ loading, jobs }) {
   return (
     <main className="flex p-4 pt-0 justify-center flex-wrap">
       <Paginate />
       <section className="w-full lg:w-4/6 min-h-screen">
         {
           loading
-            ? new Array(10).fill(null).map((job, idx) => <JobCard job={job} key={idx} />)
-            : jobs.map(job => <JobCard job={job} key={job.id} />)
+            ? new Array(10).fill(null).map((job, idx) => <Job job={job} key={idx} />)
+            : jobs.map(job => <Job job={job} key={job.id} />)
         }
       </section>
     </main>
@@ -25,4 +25,4 @@ const mapStateToProps = state => ({
   jobs: state.jobs.currentJobs,
 });
 
-export default connect(mapStateToProps)(JobList);
+export default connect(mapStateToProps)(Jobs);
