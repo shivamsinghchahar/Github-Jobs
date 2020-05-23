@@ -1,8 +1,9 @@
 import React from "react";
+import { connect } from "react-redux";
 
 import Jobs from "../../components/Jobs/Jobs";
 import Search from "../../components/Search/Search";
-import NotFound from "../../components/shared/NotFound";
+import NoResult from "../../components/shared/NoResult";
 import AppLayout from "../../layouts/AppLayout/AppLayout";
 
 function Home({ hasErrors }) {
@@ -10,10 +11,14 @@ function Home({ hasErrors }) {
     <React.Fragment>
       <AppLayout>
         <Search />
-        {hasErrors ? <NotFound /> : <Jobs />}
+        {hasErrors ? <NoResult /> : <Jobs />}
       </AppLayout>
     </React.Fragment>
   );
 }
 
-export default Home;
+const mapStateToProps = (state) => ({
+  hasErrors: state.jobs.hasErrors,
+});
+
+export default connect(mapStateToProps)(Home);

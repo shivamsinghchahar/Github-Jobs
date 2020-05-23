@@ -1,14 +1,21 @@
 import React from "react";
+import { connect } from "react-redux";
 
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
-export default function AppLayout(props) {
+function AppLayout({ dark, children }) {
   return (
-    <React.Fragment>
+    <div className={`${dark ? "bg-blue-900" : "bg-gray-200"} min-h-screen`}>
       <Header />
-      <main>{props.children}</main>
+      <main>{children}</main>
       <Footer />
-    </React.Fragment>
+    </div>
   );
 }
+
+const mapStateToProps = (state) => ({
+  dark: state.theme.dark,
+});
+
+export default connect(mapStateToProps)(AppLayout);
