@@ -19,7 +19,8 @@
     "typeface-montserrat": "0.0.75",
     "autoprefixer": "^9.7.6",
     "postcss-cli": "^7.1.0",
-    "tailwindcss": "^1.2.0"
+    "tailwindcss": "^1.2.0",
+    "redux-devtools-extension": "^2.13.8"
   },
   "scripts": {
     "start": "npm run watch:css && react-scripts start",
@@ -44,7 +45,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "redux-devtools-extension": "^2.13.8"
-  }
+  "devDependencies": {}
 }
