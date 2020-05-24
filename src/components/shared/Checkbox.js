@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export default function Checkbox({ label = "", handleChange, checked, name }) {
   return (
@@ -7,12 +7,10 @@ export default function Checkbox({ label = "", handleChange, checked, name }) {
         name={name}
         className="mr-2 leading-tight"
         type="checkbox"
-        onChange={e => handleChange(e.target.name, e.target.checked)}
+        onChange={(e) => handleChange(e.target.name, e.target.checked)}
         checked={checked}
       />
-      <span className="text-xs">
-        {label}
-      </span>
+      <span className="text-xs">{label}</span>
     </label>
   );
 }
