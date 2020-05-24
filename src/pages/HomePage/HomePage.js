@@ -6,14 +6,12 @@ import Search from "../../components/Search/Search";
 import NoResult from "../../components/shared/NoResult";
 import AppLayout from "../../layouts/AppLayout/AppLayout";
 
-function Home({ hasErrors }) {
+function HomePage({ hasErrors }) {
   return (
-    <React.Fragment>
-      <AppLayout>
-        <Search />
-        {hasErrors ? <NoResult /> : <Jobs />}
-      </AppLayout>
-    </React.Fragment>
+    <AppLayout>
+      <Search />
+      {hasErrors ? <NoResult /> : <Jobs />}
+    </AppLayout>
   );
 }
 
@@ -21,4 +19,4 @@ const mapStateToProps = (state) => ({
   hasErrors: state.jobs.hasErrors,
 });
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps)(HomePage);
