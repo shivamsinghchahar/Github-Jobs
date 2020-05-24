@@ -1,5 +1,5 @@
 // Import all actions
-import * as actions from '../actions/jobsActions';
+import * as actions from "../actions/jobsActions";
 
 export const initialState = {
   jobs: [],
@@ -12,19 +12,28 @@ export const initialState = {
 export default function jobsReducer(state = initialState, action) {
   switch (action.type) {
     case actions.GET_JOBS:
-      return { ...state, loading: true }
+      return { ...state, loading: true };
     case actions.GET_JOBS_SUCCESS:
       let jobs = [...state.jobs];
       jobs.push(action.payload);
-      return { ...state, loading: false, hasErrors: false, jobs }
+      return { ...state, loading: false, hasErrors: false, jobs };
     case actions.GET_JOBS_FAILURE:
-      return { ...state, loading: false, hasErrors: true }
+      return { ...state, loading: false, hasErrors: true };
     case actions.GET_CURRENT_JOBS:
-      return { ...state, currentJobs: state.jobs.length >= state.globalPage ? state.jobs[state.globalPage - 1].slice(action.payload.start, action.payload.end) : [] }
+      return {
+        ...state,
+        currentJobs:
+          state.jobs.length >= state.globalPage
+            ? state.jobs[state.globalPage - 1].slice(
+                action.payload.start,
+                action.payload.end
+              )
+            : [],
+      };
     case actions.SET_GLOBAL_PAGE:
-      return { ...state, globalPage: action.payload }
+      return { ...state, globalPage: action.payload };
     case actions.CLEAR_JOBS:
-      return { ...state, jobs: [], globalPage: 1 }
+      return { ...state, jobs: [], globalPage: 1 };
     default:
       return state;
   }
