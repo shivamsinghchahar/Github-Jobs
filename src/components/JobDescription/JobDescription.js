@@ -44,7 +44,7 @@ function JobDescription({ dispatch, job, dark }) {
               {job ? job.company : <CustomSkeleton width={90} />}
             </a>
           </li>
-          <li className="lg:mr-4 flex items-center py-2 flex-grow lg:flex-grow-0">
+          <li className="mr-4 flex items-center py-2 flex-grow lg:flex-grow-0">
             <i className="fas fa-globe-asia mr-1 text-base"></i>
             <span>{job ? job.location : <CustomSkeleton width={90} />}</span>
           </li>
