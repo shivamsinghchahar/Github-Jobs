@@ -14,6 +14,8 @@ export default function jobReducer(state = initialState, action) {
       return { ...state, loading: false, job: action.payload };
     case actions.GET_JOB_FAILURE:
       return { ...state, hasErrors: true, loading: false };
+    case actions.CLEAR_JOB:
+      return { job: null, hasErrors: false, loading: false };
     default:
       return state;
   }
