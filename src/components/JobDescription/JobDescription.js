@@ -14,7 +14,7 @@ function JobDescription({ dispatch, job, dark }) {
   useEffect(() => {
     dispatch(clearJob());
     dispatch(fetchJob(id));
-  }, []);
+  }, [id, dispatch]);
 
   let date = job && +new Date(job.created_at);
   return (
