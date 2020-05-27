@@ -6,7 +6,7 @@ import Job from "../Job/Job";
 
 function Jobs({ loading, jobs }) {
   return (
-    <main className="flex p-4 pt-0 justify-center flex-wrap">
+    <article className="flex p-4 pb-2 pt-0 justify-center flex-wrap">
       <Paginate />
       <section className="w-full lg:w-4/6 min-h-screen">
         {loading
@@ -15,7 +15,7 @@ function Jobs({ loading, jobs }) {
               .map((job, idx) => <Job job={job} key={idx} />)
           : jobs.map((job) => <Job job={job} key={job.id} />)}
       </section>
-    </main>
+    </article>
   );
 }
 

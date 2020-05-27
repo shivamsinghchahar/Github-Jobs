@@ -9,7 +9,7 @@ function Header({ dark }) {
     <header
       className={`${
         dark ? "bg-blue-800" : "bg-white"
-      } shadow flex justify-center items-center`}
+      } w-full fixed shadow flex justify-center items-center`}
     >
       <nav className="w-full lg:w-4/6 flex items-center justify-between flex-wrap p-4">
         <div className="flex items-center flex-shrink-0 text-gray-800 mr-6">
