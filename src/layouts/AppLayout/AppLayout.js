@@ -8,7 +8,7 @@ function AppLayout({ dark, children }) {
   return (
     <div className={`${dark ? "bg-blue-900" : "bg-gray-200"} min-h-screen`}>
       <Header />
-      <main>{children}</main>
+      <main className="pt-20">{children}</main>
       <Footer />
     </div>
   );

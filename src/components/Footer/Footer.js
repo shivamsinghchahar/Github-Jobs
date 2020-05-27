@@ -9,7 +9,7 @@ function Footer({ dark }) {
     <footer
       className={`${
         dark ? "text-gray-300 bg-blue-800" : "text-gray-800 bg-gray-100"
-      } w-full flex justify-center items-center border-1 bottom-0 p-4`}
+      } w-full flex justify-center items-center p-4`}
     >
       <section className="w-full lg:w-1/2">
         <nav>
