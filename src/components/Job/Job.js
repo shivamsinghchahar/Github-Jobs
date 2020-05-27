@@ -9,7 +9,7 @@ function Job({ job, dark }) {
   let date = job && +new Date(job.created_at);
   return (
     <Link
-      to={job ? `/positions/${job.id}` : null}
+      to={job ? `/positions/${job.id}` : "#"}
       className={`${
         dark ? "bg-blue-800" : "bg-white"
       } shadow flex flex-wrap py-4 px-3 rounded shadow-sm mb-2 lg:mb-4`}
