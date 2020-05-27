@@ -1,0 +1,25 @@
+.description ul {
+  list-style: disc;
+  margin: 0.75rem;
+  margin-left: 2rem;
+}
+
+.description p {
+  margin-bottom: 0.75rem;
+}
+
+.description a {
+  text-decoration: underline;
+  padding: 0.25rem;
+}
+
+.description a:hover {
+  background-color: #bee3f8;
+  color: #2d3748;
+}
+
+.description strong {
+  /* display: block; */
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
