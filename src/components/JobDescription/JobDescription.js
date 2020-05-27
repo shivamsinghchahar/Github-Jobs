@@ -24,7 +24,7 @@ function JobDescription({ dispatch, job, dark }) {
           dark
             ? "text-white bg-blue-800 border border-blue-700"
             : "bg-white text-gray-800 border"
-        } w-full lg:w-2/3 flex flex-wrap flex-between items-center p-4 my-4 rounded`}
+        } w-full lg:w-2/3 flex flex-wrap flex-between items-center p-4 mt-20 mb-4 rounded`}
       >
         <h1 className="text-xl lg:text-3xl font-bold py-2 w-full">
           {job ? job.title : <CustomSkeleton width="60%" />}

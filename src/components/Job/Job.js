@@ -11,8 +11,8 @@ function Job({ job, dark }) {
     <Link
       to={job ? `/positions/${job.id}` : "#"}
       className={`${
-        dark ? "bg-blue-800" : "bg-white"
-      } shadow flex flex-wrap py-4 px-3 rounded shadow-sm mb-2 lg:mb-4`}
+        dark ? "bg-blue-800 border border-blue-700" : "bg-white border"
+      } flex flex-wrap py-4 px-3 rounded mb-2`}
     >
       <header className="w-full flex flex-wrap justify-between items-baseline lg:mb-2">
         <h2

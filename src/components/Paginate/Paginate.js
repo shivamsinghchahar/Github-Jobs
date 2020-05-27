@@ -57,7 +57,7 @@ function Paginate({
             page > 1
               ? "hover:bg-blue-500 hover:text-white"
               : "bg-gray-100 text-gray-500 cursor-not-allowed"
-          } font-semibold rounded-full h-10 w-10 shadow`}
+          } font-semibold rounded-full h-10 w-10 shadow-sm`}
           disabled={!(page > 1)}
           onClick={() => dispatch(setPage(page - 1))}
         >
@@ -66,7 +66,7 @@ function Paginate({
         <div
           className={`${
             dark ? "bg-blue-800" : "bg-white"
-          } shadow rounded-full mx-2 flex items-center`}
+          } shadow-sm rounded-full mx-2 flex items-center`}
         >
           {new Array(
             Math.ceil(
@@ -98,14 +98,14 @@ function Paginate({
             currentJobs && currentJobs.length === 10
               ? "hover:bg-blue-500 hover:text-white"
               : "bg-gray-100 text-gray-500 cursor-not-allowed"
-          } font-semibold rounded-full h-10 w-10 shadow`}
+          } font-semibold rounded-full h-10 w-10 shadow-sm`}
           disabled={currentJobs && currentJobs.length < 10}
           onClick={() => dispatch(setPage(page + 1))}
         >
           <i className="fas fa-arrow-right"></i>
         </button>
       </div>
-      <div className="w-full lg:w-4/6 lg:my-4 py-2 flex justify-between items-center">
+      <div className="w-full lg:w-4/6 lg:my-2 pt-4 pb-2 flex justify-between items-center">
         <div className="bg-gray-500 w-2/12 h-px lg:w-2/6"></div>
         <div className="">
           {currentJobs.length ? (
