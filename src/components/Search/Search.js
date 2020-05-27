@@ -39,7 +39,7 @@ class Search extends React.Component {
     return (
       <div className="flex justify-center">
         <form
-          className="w-full lg:w-1/2 lg:mb-4 mt-16 pt-3 p-4 flex justify-between flex-wrap"
+          className="w-full lg:w-1/2 lg:mb-4 p-4 pt-0 flex justify-between flex-wrap"
           onSubmit={this.handleSubmit}
         >
           <Input

@@ -8,9 +8,9 @@ import { Link } from "react-router-dom";
 function NotFound({ dark }) {
   return (
     <AppLayout>
-      <section className="w-full flex flex-wrap items-center justify-center p-4">
+      <section className="w-full flex flex-wrap items-center justify-center px-4 min-h-screen">
         <p
-          className={`w-full sm:text-sm lg:text-xl antialiased font-mono text-center mb-4 py-4 ${
+          className={`w-full sm:text-sm lg:text-xl antialiased font-mono text-center ${
             dark ? "text-gray-300" : "text-gray-700"
           }`}
         >
