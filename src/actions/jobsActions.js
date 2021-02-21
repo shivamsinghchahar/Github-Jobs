@@ -1,4 +1,4 @@
-const allowCors = 'https://cors-anywhere.herokuapp.com';
+const allowCors = 'https://thingproxy.freeboard.io/fetch';
 const baseUrl = 'https://jobs.github.com/positions.json';
 // Action Types
 export const GET_JOBS = 'GET_JOBS';
