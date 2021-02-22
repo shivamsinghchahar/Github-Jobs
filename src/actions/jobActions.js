@@ -7,32 +7,33 @@ export const GET_JOB_FAILURE = "GET_JOB_FAILURE";
 export const CLEAR_JOB = "CLEAR_JOB";
 
 export const getJob = () => ({
-  type: GET_JOB,
+  type: GET_JOB
 });
 
-export const getJobSuccess = (job) => ({
+export const getJobSuccess = job => ({
   type: GET_JOB_SUCCESS,
-  payload: job,
+  payload: job
 });
 
 export const getJobFailure = () => ({
-  type: GET_JOB_FAILURE,
+  type: GET_JOB_FAILURE
 });
 
 export const clearJob = () => ({
-  type: CLEAR_JOB,
+  type: CLEAR_JOB
 });
 
 export function fetchJob(id) {
   const URL = `${allowCors}/${baseUrl}/${id}.json`;
 
-  return async (dispatch) => {
+  return async dispatch => {
     dispatch(getJob());
     try {
       const res = await fetch(URL, {
         headers: {
-          "Access-Control-Allow-Origin": "*",
-        },
+          Accept: "applicaion/json",
+          "Content-Type": "application/json"
+        }
       });
       const data = await res.json();
 
